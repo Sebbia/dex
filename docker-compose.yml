@@ -1,0 +1,6 @@
+version: "2"
+services:
+  confluence:
+    image: navrocky/dex:latest
+    ports:
+      - 8080:8080
