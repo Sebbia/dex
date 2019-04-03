@@ -11,10 +11,23 @@ Read more about dex [here](https://github.com/dexidp/dex#dex---a-federated-openi
 ## Simple usage
 
 ```bash
-$ docker run 
+$ docker run --name dex \ 
+  -p 5556:5556 \
+  -v "${PWD}/dex-config.yaml:/config.yaml" \
+  -v "${PWD}/web:/web" \
+  navrocky/dex serve /config.yaml
 ```
+
+Where:
+`-p 5556:5556` where HTTP endpoint is
+
+`-v "${PWD}/dex-config.yaml:/config.yaml"` - your dex configuration file. See at example [config](https://github.com/dexidp/dex/blob/v2.15.0/examples/config-dev.yaml)
+
+`-v "${PWD}/web:/web"` - optional directory with web static resources, forms and themes.
+
 
 ## Docker compose
 
 ```yaml
+TODO
 ```
